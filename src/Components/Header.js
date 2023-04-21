@@ -13,11 +13,12 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+    { name: 'Lập trình BackEnd', description: 'Bootcamp – Lập trình BackEnd từ Zero đến có việc', href: '#', icon: ChartPieIcon },
+    { name: 'Thiết kế web', description: 'Bootcamp – Từ Zero đến có việc', href: '#', icon: CursorArrowRaysIcon },
+    { name: 'Lập trình di động ', description: 'Bootcamp – Lập trình di động từ Zero đến có việc', href: '#', icon: FingerPrintIcon },
+    { name: 'Lập trình Front End', description: 'Bootcamp – Lập trình Front End từ Zero đến có việc', href: '#', icon: SquaresPlusIcon },
+    { name: 'Lập trình Full Stack', description: 'Bootcamp – Lập trình Full Stack từ Zero đến có việc', href: '#', icon: ArrowPathIcon },
+    { name: 'Tư duy lập trình', description: 'Bootcamp – Tư duy lập trình từ Zero đến có việc', href: '#', icon: ArrowPathIcon },
 ]
 
 const callsToAction = [
@@ -41,7 +42,7 @@ export default function Header() {
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                            <img className="h-8 w-auto" src="https://demo2.cybersoft.edu.vn/logo.png" alt="" />
                         </a>
                     </div>
                     <div className="flex lg:hidden">
@@ -57,7 +58,7 @@ export default function Header() {
                     <Popover.Group className="hidden lg:flex lg:gap-x-12">
                         <Popover className="relative">
                             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                                Product
+                                Danh Mục
                                 <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                             </Popover.Button>
 
@@ -107,18 +108,21 @@ export default function Header() {
                         </Popover>
 
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Features
+                            Khóa học
                         </a>
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Marketplace
+                            Blog
                         </a>
+
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Company
+                            Thông Tin
                         </a>
+
+
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Log in <span aria-hidden="true">&rarr;</span>
+                            Đăng nhập <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
                 </nav>
@@ -130,7 +134,7 @@ export default function Header() {
                                 <span className="sr-only">Your Company</span>
                                 <img
                                     className="h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                                    src="https://demo2.cybersoft.edu.vn/logo.png"
                                     alt=""
                                 />
                             </a>
@@ -150,7 +154,7 @@ export default function Header() {
                                         {({ open }) => (
                                             <>
                                                 <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
-                                                    Product
+                                                    Danh Mục
                                                     <ChevronDownIcon
                                                         className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                                                         aria-hidden="true"
@@ -175,27 +179,28 @@ export default function Header() {
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
-                                        Features
+                                        Khóa học
                                     </a>
                                     <a
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
-                                        Marketplace
+                                        Blog
                                     </a>
                                     <a
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
-                                        Company
+                                        Thông Tin
                                     </a>
+
                                 </div>
                                 <div className="py-6">
                                     <a
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
-                                        Log in
+                                        Đăng nhập
                                     </a>
                                 </div>
                             </div>
