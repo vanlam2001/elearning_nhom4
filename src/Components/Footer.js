@@ -13,7 +13,7 @@ export default function Footer() {
                                     <i className="fab fa-twitter" /></button><button className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                     <i className="fab fa-facebook-square" /></button><button className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                     <i className="fab fa-dribbble" /></button><button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-github" />
+                                    <i className="fab fa-github" href="https://github.com/vanlam2001/elearning_nhom4" />
                                 </button>
                             </div>
                         </div>
@@ -23,16 +23,16 @@ export default function Footer() {
                                     <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Liên kết</span>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">Trang chủ</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm">Trang chủ</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Dịch vụ</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm">Dịch vụ</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/vanlam2001/elearning_nhom4">Nhóm</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm">Nhóm</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Blog</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm">Blog</a>
                                         </li>
                                     </ul>
                                 </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { FaReact, FaDatabase, FaTabletAlt, FaCode, FaLaptopCode, FaUserNinja } from "react-icons/fa";
 import {
     ArrowPathIcon,
     Bars3Icon,
@@ -13,12 +14,12 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Lập trình BackEnd', description: 'Bootcamp – Lập trình BackEnd từ Zero đến có việc', href: '#', icon: ChartPieIcon },
+    { name: 'Lập trình BackEnd', description: 'Bootcamp – Lập trình BackEnd từ Zero đến có việc', href: '#', icon: FaDatabase },
     { name: 'Thiết kế web', description: 'Bootcamp – Từ Zero đến có việc', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Lập trình di động ', description: 'Bootcamp – Lập trình di động từ Zero đến có việc', href: '#', icon: FingerPrintIcon },
-    { name: 'Lập trình Front End', description: 'Bootcamp – Lập trình Front End từ Zero đến có việc', href: '#', icon: SquaresPlusIcon },
-    { name: 'Lập trình Full Stack', description: 'Bootcamp – Lập trình Full Stack từ Zero đến có việc', href: '#', icon: ArrowPathIcon },
-    { name: 'Tư duy lập trình', description: 'Bootcamp – Tư duy lập trình từ Zero đến có việc', href: '#', icon: ArrowPathIcon },
+    { name: 'Lập trình di động ', description: 'Bootcamp – Lập trình di động từ Zero đến có việc', href: '#', icon: FaTabletAlt },
+    { name: 'Lập trình Front End', description: 'Bootcamp – Lập trình Front End từ Zero đến có việc', href: '#', icon: FaCode },
+    { name: 'Lập trình Full Stack', description: 'Bootcamp – Lập trình Full Stack từ Zero đến có việc', href: '#', icon: FaLaptopCode },
+    { name: 'Tư duy lập trình', description: 'Bootcamp – Tư duy lập trình từ Zero đến có việc', href: '#', icon: FaUserNinja },
 ]
 
 const callsToAction = [
