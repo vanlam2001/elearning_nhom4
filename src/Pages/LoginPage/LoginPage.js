@@ -1,6 +1,7 @@
 import React from 'react'
 import { Input, Button } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 export default function LoginPage() {
     return (
         <div>
@@ -11,14 +12,14 @@ export default function LoginPage() {
                         <div className="my-5 text-sm">
                             <label htmlFor="username" className="block text-black">Tài khoản</label>
                             <FormItem name="taiKhoan" rules={[{ required: true, message: 'Vui lòng nhập tên người dùng!' }]}>
-                                <Input className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Username" autoFocus />
+                                <Input className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" prefix={<UserOutlined />} placeholder="Username" autoFocus />
                             </FormItem>
 
                         </div>
                         <div className="my-5 text-sm">
                             <label htmlFor="password" className="block text-black">Mật khẩu</label>
                             <FormItem name="matKhau" rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}>
-                                <Input.Password className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Password" />
+                                <Input.Password className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" prefix={<LockOutlined />} placeholder="Password" />
                             </FormItem>
 
                             <div className="flex justify-end mt-2 text-xs text-gray-600">
