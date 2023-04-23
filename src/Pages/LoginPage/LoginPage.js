@@ -2,7 +2,19 @@ import React from 'react'
 import { Input, Button } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-export default function LoginPage() {
+
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+
+const LoginPage = () => {
+    let navigate = useNavigate();
+    let dispatch = useDispatch();
+
+    const onFinish = (values) => {
+        console.log('Succes:', values);
+    }
+
     return (
         <div>
             <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
@@ -57,3 +69,5 @@ export default function LoginPage() {
         </div>
     )
 }
+
+export default LoginPage
