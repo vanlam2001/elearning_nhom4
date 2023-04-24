@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { rootReducer } from './redux/reducer/rootReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import userSlice from './Toolkist/userSlice';
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = configureStore({
+  userSlice: userSlice
+})
 root.render(
   <Provider store={store}>
     <App />

@@ -2,8 +2,9 @@ export const USER_LOGIN = 'USER_LOGIN'
 
 export const localUserServ = {
     get: () => {
+
         let jsonData = localStorage.getItem(USER_LOGIN);
-        return JSON.parse(jsonData)
+        return JSON.parse(jsonData) ? JSON.parse(jsonData) : null;
     },
 
     set: (userInfor) => {
@@ -14,5 +15,4 @@ export const localUserServ = {
     remove: () => {
         localStorage.removeItem(USER_LOGIN);
     },
-
 }

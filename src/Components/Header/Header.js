@@ -12,6 +12,9 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Usermenu from './Usermenu';
+import { NavLink } from 'react-router-dom';
+
 
 const products = [
     { name: 'Lập trình BackEnd', description: 'Bootcamp – Lập trình BackEnd từ Zero đến có việc', href: '#', icon: FaDatabase },
@@ -108,23 +111,22 @@ export default function Header() {
                             </Transition>
                         </Popover>
 
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        <NavLink href="#" className="text-sm font-semibold leading-6 text-gray-900">
                             Khóa học
-                        </a>
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Blog
-                        </a>
+                        </NavLink>
 
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        <NavLink href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                            Blog
+                        </NavLink>
+
+                        <NavLink href="#" className="text-sm font-semibold leading-6 text-gray-900">
                             Thông Tin
-                        </a>
+                        </NavLink>
 
 
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Đăng nhập <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        <Usermenu />
                     </div>
                 </nav>
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -176,33 +178,28 @@ export default function Header() {
                                             </>
                                         )}
                                     </Disclosure>
-                                    <a
+                                    <NavLink
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Khóa học
-                                    </a>
-                                    <a
+                                    </NavLink>
+                                    <NavLink
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Blog
-                                    </a>
-                                    <a
+                                    </NavLink>
+                                    <NavLink
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Thông Tin
-                                    </a>
+                                    </NavLink>
 
                                 </div>
                                 <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Đăng nhập
-                                    </a>
+                                    <Usermenu></Usermenu>
                                 </div>
                             </div>
                         </div>

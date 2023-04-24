@@ -1,26 +1,19 @@
 import React from 'react'
-import { Input, Button } from 'antd';
+import { Input, Button, message, Form } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+
 
 
 const LoginPage = () => {
-    let navigate = useNavigate();
-    let dispatch = useDispatch();
-
-    const onFinish = (values) => {
-        console.log('Succes:', values);
-    }
 
     return (
         <div>
             <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
                 <div className="py-8 px-8 rounded-xl">
                     <h1 className="font-medium text-2xl mt-3 text-center">Đăng nhập</h1>
-                    <form action="" className="mt-6">
+                    <Form action="" className="mt-6">
                         <div className="my-5 text-sm">
                             <label htmlFor="username" className="block text-black">Tài khoản</label>
                             <FormItem name="taiKhoan" rules={[{ required: true, message: 'Vui lòng nhập tên người dùng!' }]}>
@@ -45,7 +38,7 @@ const LoginPage = () => {
                             <Button type="primary" htmlType="submit" className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in">Đăng nhập</Button>
                         </div>
 
-                    </form>
+                    </Form>
 
                     <div className="flex md:justify-between justify-center items-center mt-10">
                         <div style={{ height: '1px' }} className="bg-gray-300 md:block hidden w-4/12" />
