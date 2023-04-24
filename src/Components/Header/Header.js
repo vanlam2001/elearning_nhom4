@@ -12,6 +12,7 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import HeaderUserinfo from './HeaderUserinfo';
 
 const products = [
     { name: 'Lập trình BackEnd', description: 'Bootcamp – Lập trình BackEnd từ Zero đến có việc', href: '#', icon: FaDatabase },
@@ -33,7 +34,7 @@ function classNames(...classes) {
 
 
 
-export default function Header() {
+function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
@@ -122,9 +123,7 @@ export default function Header() {
 
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            Đăng nhập <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        <HeaderUserinfo></HeaderUserinfo>
                     </div>
                 </nav>
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -197,12 +196,7 @@ export default function Header() {
 
                                 </div>
                                 <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Đăng nhập
-                                    </a>
+                                    <HeaderUserinfo></HeaderUserinfo>
                                 </div>
                             </div>
                         </div>
@@ -212,3 +206,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default Header
