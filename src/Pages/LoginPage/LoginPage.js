@@ -26,9 +26,10 @@ function LoginPage() {
     const onFinish = (values) => {
         userServ.loginUser(values)
             .then((res) => {
+                console.log(res)
                 message.success("Đăng nhập thành công");
-                dispatch(setLoginUser(res.data.content));
-                localUserServ.set(res.data.content)
+                dispatch(setLoginUser(res.data));
+                localUserServ.set(res.data)
                 setTimeout(() => {
                     navigate('/');
                 }, 1500);
