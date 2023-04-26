@@ -1,6 +1,7 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+
 import {
     FaReact,
     FaDatabase,
@@ -79,7 +80,7 @@ function Header() {
 
     return (
         <div>
-            <header className="bg-white">
+            <header className="bg-white fixed navbar inset-x-0 top-0 left-0">
                 <nav
                     className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                     aria-label="Global"
