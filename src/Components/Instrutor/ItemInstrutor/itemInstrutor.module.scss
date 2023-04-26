@@ -1,0 +1,43 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+
+
+.instrutorItem {
+    padding: 0 15px;
+    .instrutorcontent {
+        text-align: center;
+        border-radius: 6px;
+        padding: 15px 25px;
+        transition: all .5s;
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin:  0 auto;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        .reviewRole {
+            padding: 8px 0;
+        }
+        .reviewMentor {
+            color: $--colorSecondary1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .reviews {
+            font-size: 13px;
+            color: #8c8c8c;
+        }
+        &:hover {
+            box-shadow: 0 0 10px 6px rgba(0, 0, 0, .13);
+        }
+    }
+}

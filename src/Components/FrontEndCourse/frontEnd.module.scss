@@ -1,0 +1,41 @@
+
+$--colorGlobal: #41b294;
+$--yellow: #f6ba35;
+$--colorText: #252525;
+
+.frontendCourse {
+    .title {
+        font-weight: 600;
+        color: $--colorText;
+    }
+    .list {
+        padding: 24px 0;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 30px;
+        justify-items: center;
+    }
+}
+
+
+@media all and ( max-width: 1280px) {
+    .frontendCourse {
+        .list {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}
+@media all and ( max-width: 1024px) {
+    .frontendCourse {
+        .list {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .frontendCourse {
+        .list {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}

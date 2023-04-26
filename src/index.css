@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.myContainer {
+    width: 1240px;
+    max-width: 90%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+@media all and ( max-width: 1023px) {
+    .myContainer {
+        max-width: 100%;
+}
+}

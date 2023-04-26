@@ -1,0 +1,90 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+
+.infoCourseHome {
+    padding: 50px 0;
+    > div {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        
+        .infoItemHome {
+            color: #fff;
+            background-color: $--colorGlobal;
+            padding: 20px;
+            line-height: 1.4;
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: -160%;
+                width: 50%;
+                height: 100%;
+                z-index: 2;
+                background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3));
+                transform: skewX(-17deg);
+                transition: all 1.2s;
+            }
+            &:hover::before {
+                left: 170%;
+            }
+            h3 {
+                font-size: 28px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            p {
+                font-weight: 300;
+            }
+            ul {
+                list-style: none;
+                li {
+                    padding: 5px;
+                    span {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .infoItemHome:nth-child(1) {
+            grid-row: 1/3;
+            background-position: 100% 100%;
+            background-size: 50%;
+            background-repeat: no-repeat;
+        }
+        .infoItemHome:nth-child(2),
+        .infoItemHome:nth-child(4) {
+            background-color: $--colorSecondary1;
+        }
+        .infoItemHome:nth-child(3) {
+            background-color: #5c8295;
+        }
+        .infoItemHome:nth-child(5) {
+            background-color: #63c0a8;
+        }
+    }
+    
+}
+
+
+@media all and ( max-width: 1023px) {
+    .infoCourseHome > div {
+        grid-template-columns: repeat(2,1fr);
+        .infoItemHome:nth-child(1) {
+            grid-column: 1/3;
+            background-size: 30%;
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .infoCourseHome > div {
+        grid-template-columns: repeat(1,1fr);
+        .infoItemHome:nth-child(1) {
+            grid-column: 1/2;
+        }
+    }
+}

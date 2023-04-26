@@ -1,0 +1,46 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+$--colorbg: #f0f8ff;
+
+
+.numberCountUp {
+    background-color: $--colorbg;
+    padding: 50px 0;
+    .numberContainer {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        .numberItem {
+            text-align: center;
+            padding: 24px;
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                margin: 0 auto;
+            }
+            .textNumber {
+                font-size: 50px;
+                font-weight: 700;
+                color: $--colorGlobal;
+            }
+            .textNumberTitle {
+                font-weight: 500;
+            }
+        }
+    }
+}
+@media all and ( max-width: 1023px) {
+    .numberCountUp {
+        .numberContainer {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .numberCountUp {
+        .numberContainer {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}

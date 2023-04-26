@@ -1,0 +1,100 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+
+.item {
+    box-shadow: 0 0 10px 4px rgba(0,0,0,.2);
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all .5s;
+    max-width: 280px;
+    &:hover {
+        transform: translateY(-6px);
+    }
+    .imageCourse {
+        position: relative;
+        img {
+            height: 185px;
+            min-height: 185px;
+        }
+        span {
+            position: absolute;
+            background-color: $--colorGlobal;
+            bottom: 0;
+            left: 0;
+            padding: 2px 10px;
+            color: #fff;
+            transform: translateY(50%);
+        }
+    }
+    .body {
+        padding: 20px;
+        h3 {
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+            min-height: 38px;
+        }
+        .titleMaker {
+            display: flex;
+            align-items: center;
+            .imageMaker {
+                height: 40px;
+                width: 40px;
+                padding: 2px;
+                border-color: #f6ba35 transparent;
+                border-left: 1px solid transparent;
+                border-bottom: 1px solid $--colorSecondary1;
+                border-right: 1px solid transparent;
+                border-top: 1px solid $--colorSecondary1;
+                border-radius: 50%;
+            }
+            .nameMaker {
+                margin-left: 10px;
+                color: #8c8c8c;
+            }
+        }
+    }
+    .footer {
+        border-top: 1px solid rgba(0,0,0,.125);
+        padding: 8px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .price {
+            p:nth-of-type(1) {
+                font-size: 12px;
+                color: #8c8c8c;
+                text-decoration: line-through;
+            }
+            p:nth-of-type(2) {
+                font-weight: 600;
+                color: $--colorGlobal;
+            }
+        }
+        .reviews {
+            color: $--colorSecondary1;
+            display: flex;
+            align-items: center;
+            span:nth-of-type(1) {
+                font-weight: 600;
+            }
+            span:nth-of-type(2) {
+                font-size: 12px;
+                color: #8c8c8c;
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+
+
+@media all and ( max-width: 1023px) {
+    
+}

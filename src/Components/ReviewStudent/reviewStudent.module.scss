@@ -1,0 +1,107 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorSecondary2: #ed85ab;
+$--colorText: #252525;
+$--colorText2: #8c8c8c;
+
+
+
+.reviewStudent {
+    padding: 30px 0;
+    > div {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        align-items: center;
+        .reviewImg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            img {
+                position: relative;
+                width: 250px;
+            }
+            @mixin smallBox ($color) {
+                position: absolute;
+                background-image: radial-gradient($color 10%,transparent 11%),radial-gradient($color 10%,transparent 11%);
+                background-size: 10px 10px;
+                height: 24%;
+                width: 10%;
+            }
+            .triangleLeftRight {
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 0;
+                left: 2%;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 50px solid $--colorSecondary1;
+            }
+            .smallboxLeftTop {
+                @include smallBox($--colorGlobal);
+                top: 10%;
+                left: 10%;
+                height: 70px;
+                width: 16%;
+            }
+            .smallboxRightTop {
+                @include smallBox($--colorSecondary1);
+                top: 5%;
+                right: 5%;
+                transform: rotate(45deg);
+            }
+            .smallboxRightBottom {
+                @include smallBox($--colorSecondary1);
+                bottom: 5%;
+                left: 70%;
+                width: 15%;
+            }
+        }
+        .quote {
+            blockquote p {
+                position: relative;
+                line-height: 30px;
+                font-size: 17px;
+                margin-bottom: 16px;
+                padding: 0 10px;
+                text-align: justify;
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: -4%;
+                    content: open-quote;
+                    font-size: 50px;
+                    font-family: fantasy;
+                    color: $--colorSecondary2;
+                }
+                &::after {
+                    position: absolute;
+                    bottom: -15%;
+                    right: -4%;
+                    content: close-quote;
+                    font-size: 50px;
+                    font-family: fantasy;
+                    color: $--colorSecondary2;
+                }
+            }
+            .reviewName {
+                color: #ed85ab;
+            }
+            span {
+                color: $--colorText2;
+            }
+        }
+    }
+}
+
+@media all and ( max-width: 768px) {
+    .reviewStudent > div {
+        grid-template-columns: repeat(1,1fr);
+        .quote {
+            padding:  0 20px;
+        }
+    }
+}

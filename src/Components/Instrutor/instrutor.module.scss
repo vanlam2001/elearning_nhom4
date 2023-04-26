@@ -1,0 +1,29 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+
+
+.instrutor {
+    padding:  50px 0;
+    h2 {
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .slickContainer {
+        > div {
+            padding: 15px 0;
+        }
+        button::before {
+            color: $--colorGlobal;
+            font-size: 30px;
+
+        }
+        ul {
+            bottom: -20px;
+            button::before {
+                font-size: 16px;
+            }
+        }
+    }
+}
