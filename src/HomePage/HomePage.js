@@ -10,11 +10,11 @@ export default function HomePage() {
     return (
         <div>
             <Banner></Banner>
-            <InfoCourseHome/>
-            <ListCourseHome/>
-            <NumberCountUp/>
-            <Instrutor/>
-            <ReviewStudent/>
+            <InfoCourseHome />
+            <ListCourseHome />
+            <NumberCountUp />
+            <Instrutor />
+            <ReviewStudent />
         </div>
     )
 }
