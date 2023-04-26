@@ -80,7 +80,7 @@ function Header() {
 
     return (
         <div>
-            <header className="bg-white fixed navbar inset-x-0 top-0 left-0">
+            <header className="bg-white z-50 fixed navbar inset-x-0 top-0 left-0">
                 <nav
                     className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                     aria-label="Global"
