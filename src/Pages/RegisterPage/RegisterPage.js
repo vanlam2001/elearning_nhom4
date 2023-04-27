@@ -1,14 +1,16 @@
 import React from 'react'
 import { Input, Button, message, Form } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 function RegisterPage() {
+    let dispatch = useDispatch();
+    let navigate = useNavigate();
     return (
         <div>
-
             <div className="bg-white lg:w-4/12 md:6/12 w-10/12 m-auto my-10 shadow-md">
                 <div className="py-8 px-8 rounded-xl">
-                    <h1 className="font-medium text-2xl mt-3 text-center">Đăng nhập</h1>
+                    <h1 className="font-medium text-2xl mt-3 text-center">Đăng ký</h1>
                     <Form initialValues={{
                         remember: true,
                     }} action="" className="mt-6">
@@ -57,9 +59,6 @@ function RegisterPage() {
                         </div>
 
                     </Form>
-
-
-
 
                     <div className="flex justify-center items-center mt-6">
                         <a href="/" className="inline-flex items-center font-bold text-blue-500 hover:text-blue-700 text-xs text-center">
