@@ -6,13 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import userSlice from './Toolkits/userSlice';
 import { Provider } from 'react-redux';
+
 import courseSlice from './Toolkits/courseSlice';
+
+import formSuccessSlice from './Toolkits/formSuccessSlice';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore({
   reducer: {
     userSlice: userSlice,
+
     courseSlice: courseSlice,
+
+    formSuccessSlice: formSuccessSlice
+
   }
 })
 
