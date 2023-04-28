@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { userServ } from '../../services/userService';
 import { closeFormSuccess, registerSuccess } from '../../Toolkits/formSuccessSlice';
 import { localUserServ } from '../../services/localService';
+import { checkEmail, checkFullName, checkPassword, checkPhoneVietNam, checkUserName } from './ValidationForm';
 
 
 const { Option } = Select;
@@ -14,27 +15,32 @@ function RegisterPage() {
     let navigate = useNavigate();
 
     const onFinish = async (values) => {
-
+        let info = { ...values, maNhom: 'GP10' };
+        let { taiKhoan, matKhau, matKhauNhapLai, hoTen, email, soDt } = info;
         let fetchRegisterUser = async () => {
-            try {
-                let response = await userServ.registerUser(values);
-                console.log("🚀 ~ file: RegisterPage.js:18 ~ fetchRegisterUser ~ response:", response)
-                dispatch((registerSuccess()));
-                localUserServ.set(response.data)
-                message.success("Đăng ký thành công")
+            let isValidation = checkUserName(taiKhoan) && checkPassword(matKhau, matKhauNhapLai) && checkFullName(hoTen) && checkEmail(email) && checkPhoneVietNam(soDt);
+            if (isValidation) {
+                try {
+                    let response = await userServ.registerUser(values);
+                    console.log("🚀 ~ file: RegisterPage.js:18 ~ fetchRegisterUser ~ response:", response)
+                    dispatch((registerSuccess()));
+                    localUserServ.set(response.data)
+                    message.success("Đăng ký thành công")
 
-                setTimeout(() => {
-                    dispatch((closeFormSuccess()))
-                }, 2000);
+                    setTimeout(() => {
+                        dispatch((closeFormSuccess()))
+                    }, 2000);
 
-                setTimeout(() => {
-                    navigate('/login');
-                }, 300);
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 300);
+                }
+
+                catch (error) {
+                    message.error(error.response.data);
+                }
             }
 
-            catch (error) {
-                message.error(error.response.data);
-            }
         }
         fetchRegisterUser();
     }
@@ -123,7 +129,7 @@ function RegisterPage() {
                                     <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </span>
-                            <NavLink className="ml-2">Quay về trang chủ</NavLink>
+                            <NavLink to={'/'} className="ml-2">Quay về trang chủ</NavLink>
                         </a>
                     </div>
 
