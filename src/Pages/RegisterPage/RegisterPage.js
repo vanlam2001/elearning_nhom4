@@ -92,7 +92,7 @@ function RegisterPage() {
 
 
 
-                            <Form.Item name="maNhom" rules={[{ required: true, message: 'Vui lòng nhập mã nhóm!' }]}>
+                            <Form.Item name="maNhom" rules={[{ required: true, message: 'Vui chọn mã nhóm!' }]}>
                                 <Select placeholder="Chọn mã nhóm">
                                     <Option value="GP01">Mã nhóm 1</Option>
                                     <Option value="GP02">Mã nhóm 2</Option>
