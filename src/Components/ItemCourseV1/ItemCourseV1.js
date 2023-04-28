@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
 import styles from './itemCourseV1.module.scss'
-export default function ItemCourseV1({item}) {
+export default function ItemCourseV1({ item }) {
   return (
     <div className={styles.item}>
       <div className={styles.imageCourse}>
@@ -23,7 +23,7 @@ export default function ItemCourseV1({item}) {
           <p>400.000 <sup>đ</sup></p>
         </div>
         <div className={styles.reviews}>
-          <FaStar/>
+          <FaStar />
           <span className={styles.textStar}>4.9</span>
           <span className={styles.quantity}>(7840)</span>
         </div>

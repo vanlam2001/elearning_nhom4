@@ -1,3 +1,4 @@
+import BlogPage from "../Components/BlogPage/BlogPage";
 import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import LoginPage from "../Pages/LoginPage/LoginPage";
@@ -17,7 +18,10 @@ export const userRoute = [
     {
         path: '/register',
         component: <Layout Component={RegisterPage}></Layout>
+    },
+
+    {
+        path: '/blog',
+        component: <Layout Component={BlogPage}></Layout>
     }
-
-
 ]
