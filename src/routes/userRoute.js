@@ -1,4 +1,7 @@
+import BackEndCourse from "../Components/BackEndCourse/BackEndCourse";
 import BlogPage from "../Components/BlogPage/BlogPage";
+import FrontEndCourse from "../Components/FrontEndCourse/FrontEndCourse";
+import ListCourseHome from "../Components/ListCourseHome/ListCourseHome";
 import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import DetailPage from "../Pages/DetailPage/DetailPage";
@@ -28,5 +31,11 @@ export const userRoute = [
     {
         path: '/detail/:id',
         component: <Layout Component={DetailPage}></Layout>
-    }
+    },
+
+    {
+        path: '/khoahoc',
+        component: <Layout Component={ListCourseHome}></Layout>
+    },
+
 ]

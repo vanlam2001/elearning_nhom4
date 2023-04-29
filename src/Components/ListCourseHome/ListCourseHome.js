@@ -7,24 +7,24 @@ import FrontEndCourse from '../FrontEndCourse/FrontEndCourse';
 import PopularCourse from '../PopularCourse/PopularCourse';
 
 export default function ListCourseHome() {
-    let dispath = useDispatch();
-    useEffect(() => {
-      courseService.getCourseList()
+  let dispath = useDispatch();
+  useEffect(() => {
+    courseService.getCourseList()
       .then((res) => {
         dispath(setListCourse(res.data))
       })
       .catch((err) => {
         console.log(err);
       });
-    }, [])
-    
+  }, [])
+
   return (
     <div>
-        <div className="myContainer">
-            <PopularCourse/>
-            <FrontEndCourse/>
-            <BackEndCourse/>
-        </div>
+      <div className="myContainer">
+        <PopularCourse />
+        <FrontEndCourse />
+        <BackEndCourse />
+      </div>
     </div>
   )
 }

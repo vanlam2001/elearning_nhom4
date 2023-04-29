@@ -27,11 +27,14 @@ import {
 import HeaderUserinfo from "./HeaderUserinfo";
 import { NavLink } from "react-router-dom";
 
+import Layout from "../../Layout/Layout";
+import BackEndCourse from "../BackEndCourse/BackEndCourse";
+
 const products = [
     {
         name: "Lập trình BackEnd",
         description: "Bootcamp – Lập trình BackEnd từ Zero đến có việc",
-        href: "#",
+        href: '#',
         icon: FaDatabase,
     },
     {
@@ -49,7 +52,7 @@ const products = [
     {
         name: "Lập trình Front End",
         description: "Bootcamp – Lập trình Front End từ Zero đến có việc",
-        href: "#",
+        href: '/frontend',
         icon: FaCode,
     },
     {
@@ -171,12 +174,12 @@ function Header() {
                             </Transition>
                         </Popover>
 
-                        <a
+                        <NavLink to={'/khoahoc'}
                             href="#"
                             className="text-sm font-semibold leading-6 text-gray-900"
                         >
                             Khóa học
-                        </a>
+                        </NavLink>
                         <NavLink to={'/blog'}
                             href="#"
                             className="text-sm font-semibold leading-6 text-gray-900"

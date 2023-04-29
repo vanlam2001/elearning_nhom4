@@ -7,12 +7,12 @@ export default function BackEndCourse() {
   const listBackEndCourse = listCourse?.filter((item) => item.danhMucKhoaHoc.maDanhMucKhoahoc === 'BackEnd')
   return (
     <div className={styles.backtendCourse}>
-        <h2 className={styles.title}>Khóa học Back End</h2>
-        <div className={styles.list}>
-            {listBackEndCourse?.slice(2,6).map((item, index) => {
-              return <ItemCourseV2 key={index} item={item}/>
-            })}
-        </div>
+      <h2 className={styles.title}>Khóa học Back End</h2>
+      <div className={styles.list}>
+        {listBackEndCourse?.slice(2, 6).map((item, index) => {
+          return <ItemCourseV2 key={index} item={item} />
+        })}
+      </div>
     </div>
   )
 }
