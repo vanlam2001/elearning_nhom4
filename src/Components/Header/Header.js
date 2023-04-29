@@ -26,6 +26,7 @@ import {
 } from "@heroicons/react/20/solid";
 import HeaderUserinfo from "./HeaderUserinfo";
 import { NavLink } from "react-router-dom";
+import SearchPage from "../SearchPage/SearchPage";
 
 const products = [
     {

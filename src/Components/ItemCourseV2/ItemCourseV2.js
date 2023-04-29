@@ -2,7 +2,7 @@ import React from 'react'
 import { GoClock, GoCalendar, GoTag } from 'react-icons/go';
 import { SiLevelsdotfyi } from 'react-icons/si';
 import styles from './itemCourseV2.module.scss'
-export default function ItemCourseV2({item}) {
+export default function ItemCourseV2({ item }) {
   return (
     <div className={styles.item}>
       <div className={styles.sale}><span>Yêu thích</span></div>
@@ -13,9 +13,9 @@ export default function ItemCourseV2({item}) {
       <div className={styles.body}>
         <h3>{item.moTa}</h3>
         <div className={styles.itemIcon}>
-          <div><GoClock/><span>8 giờ</span></div>
-          <div><GoCalendar/><span>4 tuần</span></div>
-          <div><SiLevelsdotfyi/><span>Tất cả</span></div>
+          <div><GoClock /><span>8 giờ</span></div>
+          <div><GoCalendar /><span>4 tuần</span></div>
+          <div><SiLevelsdotfyi /><span>Tất cả</span></div>
         </div>
       </div>
       <div className={styles.footer}>
@@ -27,7 +27,7 @@ export default function ItemCourseV2({item}) {
         </div>
         <div className={styles.price}>
           <p>800.000 <sup>đ</sup></p>
-          <p>400.000 <sup>đ</sup><GoTag/></p>
+          <p>400.000 <sup>đ</sup><GoTag /></p>
         </div>
       </div>
     </div>

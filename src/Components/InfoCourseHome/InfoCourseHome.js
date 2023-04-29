@@ -6,7 +6,7 @@ export default function InfoCourseHome() {
   return (
     <div className={styles.infoCourseHome}>
       <div className="myContainer">
-        <div className={styles.infoItemHome} style={{backgroundImage: `url(${bgInfo})`}}>
+        <div className={styles.infoItemHome} style={{ backgroundImage: `url(${bgInfo})` }}>
           <h3>Khóa học</h3>
           <p>
             <b>Học qua dự án thực tế</b>, học đi đôi với hành, không lý thuyết
