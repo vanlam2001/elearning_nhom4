@@ -10,37 +10,37 @@ export default function DetailPage() {
     const params = useParams();
     const [course, setCourse] = useState({})
     console.log("🚀 ~ file: DetailPage.js:10 ~ DetailPage ~ course:", course)
-    
+
     useEffect(() => {
         courseService.getDetailCourse(params.id)
-        .then((res) => {
-            console.log("🚀 ~ file: DetailPage.js:15 ~ .then ~ res:", res)
-            setCourse(res.data)
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    // eslint-disable-next-line
+            .then((res) => {
+                console.log("🚀 ~ file: DetailPage.js:15 ~ .then ~ res:", res)
+                setCourse(res.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        // eslint-disable-next-line
     }, []);
-    
-  return (
-    <div className={styles.detailCourse}>
-        <div className={styles.titlePage}>
+
+    return (
+        <div className={styles.detailCourse}>
+            <div className={styles.titlePage}>
+                <div className="myContainer">
+                    <h3>Thông tin khóa học</h3>
+                    <p>Tiến lên và không chần chừ !!!</p>
+                </div>
+            </div>
             <div className="myContainer">
-                <h3>Thông tin khóa học</h3>
-                <p>Tiến lên và không chần chừ !!!</p>
-            </div>
-        </div>
-        <div className="myContainer">
-            <div className={styles.content}>
-                <div className={styles.left}>
-                    <InfoCourse course={course}/>
-                </div>
-                <div className={styles.right}>
-                    <RegisterCourse course={course}/>
+                <div className={styles.content}>
+                    <div className={styles.left}>
+                        <InfoCourse course={course} />
+                    </div>
+                    <div className={styles.right}>
+                        <RegisterCourse course={course} />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
