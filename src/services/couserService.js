@@ -6,5 +6,12 @@ export const courseService = {
     },
     getCourseList: () => {
         return https.get('/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01')
-    }
+    },
+    getDetailCourse: (id) => {
+        return https.get(`/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${id}`)
+    },
+    postRegisterCourse: (data) => {
+        return https.post('/api/QuanLyKhoaHoc/DangKyKhoaHoc', data)
+    },
+
 }

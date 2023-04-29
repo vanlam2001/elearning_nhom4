@@ -1,0 +1,62 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+$--colorTextCard: #8c8c8c;
+@media all and ( max-width: 1023px) {
+    
+}
+
+.registerCourse {
+    box-shadow: 1px 1px 10px 4px #dadada;
+    border-radius: 8px;
+    .imageCourse {
+        padding: 10px;
+    }
+    .price {
+        padding: 20px;
+        font-size: 25px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        svg {
+            color: $--colorSecondary1;
+        }
+    }
+    .btnRegister {
+        padding: 0 20px;
+        button {
+            width: 100%;
+        }
+    }
+    .content {
+        padding: 0 20px;
+        ul {
+            list-style: none;
+            li {
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #f2f1f1;
+                span {
+                    font-weight: bold;
+                }
+                svg {
+                    color: $--colorSecondary1;
+                    font-size: 20px;
+                }
+                &:nth-of-type(1) {
+                    border-top: none;
+                }
+            }
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .registerCourse {
+        .content {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+
+
+.btnStyle {
+    padding: 10px 20px;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: all .5s;
+    background-color: $--colorSecondary1;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        transform: scale(.95);
+    }
+}

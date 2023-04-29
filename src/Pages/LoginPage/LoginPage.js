@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router';
 import { localUserServ } from '../../services/localService';
 import { userServ } from '../../services/userService';
 import { Input, Button, message, Form } from 'antd';
@@ -9,7 +8,6 @@ import { setLoginUser } from '../../Toolkits/userSlice';
 
 function LoginPage() {
     let dispatch = useDispatch();
-    let navigate = useNavigate();
 
     let fillForm = () => {
         let info = localUserServ.get();
@@ -31,7 +29,7 @@ function LoginPage() {
                 dispatch(setLoginUser(res.data));
                 localUserServ.set(res.data)
                 setTimeout(() => {
-                    navigate('/');
+                    window.location.href = '/'
                 }, 1500);
             })
 

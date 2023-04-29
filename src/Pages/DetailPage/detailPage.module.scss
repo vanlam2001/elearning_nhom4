@@ -1,0 +1,70 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+.detailCourse {
+    margin-top: 84px;
+    .titlePage {
+        padding: 50px 0;
+        text-transform: uppercase;
+        background-color: #ffd60a;
+        color: #fff;
+        h3 {
+            font-size: 32px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+    .content {
+        display: flex;
+        padding: 50px 0;
+        margin: 0 -15px;
+        .left {
+            width: 70%;
+            padding: 0 15px;
+        }
+        .right {
+            width: 30%;
+            padding: 0 15px;
+        }
+    }
+}
+
+@media all and ( max-width: 1023px) {
+    .detailCourse {
+        .content {
+            .left {
+                width: 60%;
+            }
+            .right {
+                width: 40%;
+            }
+        }
+    }
+}
+@media all and ( max-width: 768px) {
+    .detailCourse {
+        .titlePage {
+            h3 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        .content {
+            flex-direction: column-reverse;
+            .left {
+                width: 100%;
+                margin-top: 30px;
+            }
+            .right {
+                width: 100%;
+            }
+        }
+    }
+}
+
