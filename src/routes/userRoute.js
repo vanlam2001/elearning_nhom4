@@ -1,6 +1,7 @@
 import BackEndCourse from "../Components/BackEndCourse/BackEndCourse";
 import BlogPage from "../Components/BlogPage/BlogPage";
 import FrontEndCourse from "../Components/FrontEndCourse/FrontEndCourse";
+import ListKhoaHoc from "../Components/KhoaHoc/ListKhoaHoc";
 import ListCourseHome from "../Components/ListCourseHome/ListCourseHome";
 import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
@@ -36,7 +37,7 @@ export const userRoute = [
 
     {
         path: '/khoahoc',
-        component: <Layout Component={ListCourseHome}></Layout>
+        component: <Layout Component={ListKhoaHoc}></Layout>
     },
 
     {
