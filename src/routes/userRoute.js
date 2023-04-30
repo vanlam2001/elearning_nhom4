@@ -1,8 +1,6 @@
-import BackEndCourse from "../Components/BackEndCourse/BackEndCourse";
 import BlogPage from "../Components/BlogPage/BlogPage";
-import FrontEndCourse from "../Components/FrontEndCourse/FrontEndCourse";
+import Info from "../Components/Info/Info";
 import ListKhoaHoc from "../Components/KhoaHoc/ListKhoaHoc";
-import ListCourseHome from "../Components/ListCourseHome/ListCourseHome";
 import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import CategoryCoursePage from "../Pages/CategoryCoursePage/CategoryCoursePage";
@@ -50,5 +48,13 @@ export const userRoute = [
         path: '*',
         component: <Layout Component={NotFoundPage}></Layout>
     },
+
+    {
+        path: '/info',
+        component: <Layout Component={Info}></Layout>
+    },
+
+
+
 
 ]
