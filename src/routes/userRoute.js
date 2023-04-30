@@ -4,6 +4,7 @@ import FrontEndCourse from "../Components/FrontEndCourse/FrontEndCourse";
 import ListCourseHome from "../Components/ListCourseHome/ListCourseHome";
 import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
+import CategoryCoursePage from "../Pages/CategoryCoursePage/CategoryCoursePage";
 import DetailPage from "../Pages/DetailPage/DetailPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
@@ -36,6 +37,11 @@ export const userRoute = [
     {
         path: '/khoahoc',
         component: <Layout Component={ListCourseHome}></Layout>
+    },
+
+    {
+        path: '/categorycourse/:id',
+        component: <Layout Component={CategoryCoursePage}></Layout>
     },
 
 ]

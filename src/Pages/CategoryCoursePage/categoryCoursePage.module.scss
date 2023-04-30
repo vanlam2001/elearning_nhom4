@@ -1,0 +1,64 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+
+.categoryCoursePage {
+    margin-top: 84px;
+    padding: 50px 0;
+    .categoryTitle {
+        padding: 12px 10px;
+        border: 2px solid #e4e4e4;
+        font-weight: 600;
+        transition: all .5s;
+        display: inline-block;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        cursor: default;
+        &:hover {
+            border-color: #113d3c;
+            transform: scale(0.98);
+        }
+        > div {
+            display: flex;
+            align-items: center;
+            svg {
+                font-size: 20px;
+                color: $--colorSecondary1;
+            }
+            span {
+                margin-left: 10px;
+            }
+        }
+    }
+    .listCourse {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 30px;
+        justify-items: center;
+    }
+}
+@media all and ( max-width: 1280px) {
+    .categoryCoursePage {
+        .listCourse {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}
+@media all and ( max-width: 1024px) {
+    .categoryCoursePage {
+        .listCourse {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .categoryCoursePage {
+        .listCourse {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}
+

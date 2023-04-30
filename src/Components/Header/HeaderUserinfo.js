@@ -12,9 +12,7 @@ function HeaderUserinfo() {
         localUserServ.remove();
         window.location.href = '/';
     }
-    console.log(userInfo)
     if (userInfo) {
-        console.log('first')
         return (
             <Menu as="div" className="relative ml-3">
                 <div>

@@ -13,5 +13,12 @@ export const courseService = {
     postRegisterCourse: (data) => {
         return https.post('/api/QuanLyKhoaHoc/DangKyKhoaHoc', data)
     },
+    getCourseMenu: () => {
+        return https.get('/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc')
+    },
+    getCategoryCourse: (id) => {
+        return https.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${id}&MaNhom=GP01`)
+    },
+
 
 }

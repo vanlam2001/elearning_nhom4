@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 
@@ -29,41 +29,42 @@ import { NavLink } from "react-router-dom";
 
 import Layout from "../../Layout/Layout";
 import BackEndCourse from "../BackEndCourse/BackEndCourse";
+import { courseService } from "../../services/couserService";
 
 const products = [
     {
         name: "Lập trình BackEnd",
-        description: "Bootcamp – Lập trình BackEnd từ Zero đến có việc",
+        description: "Bootcamp - Lập trình BackEnd từ Zero đến có việc",
         href: '#',
         icon: FaDatabase,
     },
     {
         name: "Thiết kế web",
-        description: "Bootcamp – Từ Zero đến có việc",
+        description: "Bootcamp - Từ Zero đến có việc",
         href: "#",
         icon: CursorArrowRaysIcon,
     },
     {
         name: "Lập trình di động ",
-        description: "Bootcamp – Lập trình di động từ Zero đến có việc",
+        description: "Bootcamp - Lập trình di động từ Zero đến có việc",
         href: "#",
         icon: FaTabletAlt,
     },
     {
         name: "Lập trình Front End",
-        description: "Bootcamp – Lập trình Front End từ Zero đến có việc",
+        description: "Bootcamp - Lập trình Front End từ Zero đến có việc",
         href: '/frontend',
         icon: FaCode,
     },
     {
         name: "Lập trình Full Stack",
-        description: "Bootcamp – Lập trình Full Stack từ Zero đến có việc",
+        description: "Bootcamp - Lập trình Full Stack từ Zero đến có việc",
         href: "#",
         icon: FaLaptopCode,
     },
     {
         name: "Tư duy lập trình",
-        description: "Bootcamp – Tư duy lập trình từ Zero đến có việc",
+        description: "Bootcamp - Tư duy lập trình từ Zero đến có việc",
         href: "#",
         icon: FaUserNinja,
     },
@@ -80,6 +81,24 @@ function classNames(...classes) {
 
 function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [listCategoryCourse, setListCategoryCourse] = useState([])
+    useEffect(() => {
+        courseService.getCourseMenu()
+        .then((res) => {
+            let listObj = []
+            for(let i = 0; i < res.data.length; i++) {
+                let newObj = {...res.data[i], ...products[i]}
+                listObj.push(newObj)
+            }
+            setListCategoryCourse(listObj);
+            
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    
+    }, [])
+    
 
     return (
         <div>
@@ -129,30 +148,31 @@ function Header() {
                             >
                                 <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                     <div className="p-4">
-                                        {products.map((item) => (
-                                            <div
-                                                key={item.name}
-                                                className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                                            >
-                                                <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                    <item.icon
-                                                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                                                        aria-hidden="true"
-                                                    />
+                                        {listCategoryCourse.map((item) => (
+                                            <NavLink key={item.name} to={`/categorycourse/${item.maDanhMuc}`}>
+                                                <div
+                                                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                                                >
+                                                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                                        <item.icon
+                                                            className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                                                            aria-hidden="true"
+                                                        />
+                                                    </div>
+                                                    <div className="flex-auto">
+                                                        <a
+                                                            href={item.href}
+                                                            className="block font-semibold text-gray-900"
+                                                        >
+                                                            {item.name}
+                                                            <span className="absolute inset-0" />
+                                                        </a>
+                                                        <p className="mt-1 text-gray-600">
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex-auto">
-                                                    <a
-                                                        href={item.href}
-                                                        className="block font-semibold text-gray-900"
-                                                    >
-                                                        {item.name}
-                                                        <span className="absolute inset-0" />
-                                                    </a>
-                                                    <p className="mt-1 text-gray-600">
-                                                        {item.description}
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            </NavLink>
                                         ))}
                                     </div>
                                     <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
@@ -242,15 +262,17 @@ function Header() {
                                                     />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className="mt-2 space-y-2">
-                                                    {[...products, ...callsToAction].map((item) => (
-                                                        <Disclosure.Button
-                                                            key={item.name}
-                                                            as="a"
-                                                            href={item.href}
-                                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                        >
-                                                            {item.name}
-                                                        </Disclosure.Button>
+                                                    {[...listCategoryCourse, ...callsToAction].map((item) => (
+                                                        <NavLink to={`/categorycourse/${item.maDanhMuc}`} key={item.name}>
+                                                            <Disclosure.Button
+                                                                as="a"
+                                                                href={item.href}
+                                                                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                                            >
+                                                                {item.name}
+                                                            </Disclosure.Button>
+
+                                                        </NavLink>
                                                     ))}
                                                 </Disclosure.Panel>
                                             </>
