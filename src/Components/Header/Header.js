@@ -84,21 +84,21 @@ function Header() {
     const [listCategoryCourse, setListCategoryCourse] = useState([])
     useEffect(() => {
         courseService.getCourseMenu()
-        .then((res) => {
-            let listObj = []
-            for(let i = 0; i < res.data.length; i++) {
-                let newObj = {...res.data[i], ...products[i]}
-                listObj.push(newObj)
-            }
-            setListCategoryCourse(listObj);
-            
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    
+            .then((res) => {
+                let listObj = []
+                for (let i = 0; i < res.data.length; i++) {
+                    let newObj = { ...res.data[i], ...products[i] }
+                    listObj.push(newObj)
+                }
+                setListCategoryCourse(listObj);
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
     }, [])
-    
+
 
     return (
         <div>
