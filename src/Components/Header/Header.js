@@ -279,23 +279,23 @@ function Header() {
                                         )}
                                     </Disclosure>
                                     <a
-                                        href="#"
+                                        href="/khoahoc"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Khoá học phổ biến
                                     </a>
-                                    <NavLink to={'/blog'}
-                                        href="#"
+                                    <a
+                                        href="/blog"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Blog
-                                    </NavLink>
-                                    <NavLink to={'/info'}
-                                        href="#"
+                                    </a>
+                                    <a
+                                        href="/info"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Thông Tin
-                                    </NavLink>
+                                    </a>
                                 </div>
                                 <div className="py-6">
                                     <HeaderUserinfo></HeaderUserinfo>
