@@ -1,0 +1,123 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+
+.infoUser {
+    font-size: 16px;
+    color: $--colorText;
+    .infoTop {
+        display: flex;
+        .infoTopLeft {
+            width: 65%;
+        }
+        .infoTopRight {
+            width: 35%;
+        }
+        p {
+            font-weight: bold;
+            padding: 10px 0;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+    .infoBot {
+        padding: 30px 0;
+        h4 {
+            font-size: 24px;
+        }
+        .infoBotContent {
+            display: flex;
+            margin: 0 -15px;
+            .skillAll {
+                padding: 0 15px;
+                width: 65%;
+                .mySkill {
+                    display: flex;
+                    align-items: center;
+                    padding: 6px 0;
+                    .skillBtn {
+                        width: 60px;
+                        height: 40px;
+                        margin-right: 5px;
+                        border-radius: 8px;
+                        border: none;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                    &:nth-child(1) .skillBtn {
+                        background-color: #f9ca9a;
+                        
+                    }
+                    &:nth-child(2) .skillBtn {
+                        background-color: #f8bebb;
+                        
+                    }
+                    &:nth-child(3) .skillBtn {
+                        background-color: #f0cc6b;
+                        
+                    }
+                    &:nth-child(4) .skillBtn {
+                        background-color: #113d3c;
+                        
+                    }
+                }
+            }
+            .timeStudy {
+                padding: 0 15px;
+                width: 35%;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 20px;
+                .timeStudyItem {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    padding: 6px;
+                    border-radius: 10px;
+                    background-color: $--colorGlobal;
+                    svg {
+                        font-size: 20px;
+                        margin-right: 6px;
+                    }
+                    h6 {
+                        font-size: 14px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and ( max-width: 768px) {
+    .infoUser {
+        .infoBot {
+            .infoBotContent {
+                flex-direction: column;
+                align-items: center;
+                .skillAll {
+                    width: 100%;
+                }
+                .timeStudy {
+                    width: 100%;
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .infoUser {
+        .infoTop {
+            flex-direction: column;
+            .infoTopLeft,
+            .infoTopRight {
+                width: 100%;
+            }
+        }
+    }
+}

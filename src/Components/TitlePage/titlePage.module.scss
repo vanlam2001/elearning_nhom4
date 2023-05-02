@@ -1,0 +1,28 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+.titlePage {
+    padding: 50px 0;
+    text-transform: uppercase;
+    background-color: #ffd60a;
+    color: #fff;
+    h3 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+@media all and ( max-width: 768px) {
+    .titlePage {
+        h3 {
+            font-size: 26px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,151 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+
+
+.formUpdate {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 0 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: modalFadeInBg ease .3s;
+    .formContainer {
+        width: 100%;
+        max-width: 460px;
+        border-radius: 8px;
+        background: url(../../../images/bgFormUpdate.gif);
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        animation: modalFadeIn ease .5s;
+        .titleForm {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px 0;
+            h3 {
+                font-size: 20px;
+            }
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                transition: all .3s;
+                &:hover {
+                    transform: scale(0.95);
+                }
+                svg {
+                    font-size: 25px;
+                }
+            }
+        }
+        .formContent {
+            padding: 20px;
+            .formBody {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                > div {
+                    width: 100%;
+                }
+                .typeInput {
+                    width: 100%;
+                    background: #eee;
+                    padding: 8px 12px;
+                    margin: 5px 0;
+                    font-size: 16px;
+                    border: 1px solid $--colorGlobal ;
+                    input {
+                        background: #eee;
+                    }
+                    &:focus {
+                        border-radius: 6px;
+                        border: 1px solid $--colorGlobal !important;
+                    }
+                    &:hover {
+                        border: 1px solid $--colorGlobal !important;
+                    }
+                }
+                .formBtn {
+                    margin-bottom: 0;
+                    .btnUpdate {
+                        font-size: 14px;
+                        color: #fff;
+                        background-color: #36867b;
+                        border: 1px solid #fff;
+                        border-radius: 25px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        height: auto;
+                        padding: 10px 30px;
+                        margin: 10px auto 0;
+                        transition: all .3s;
+                        &:hover {
+                            transform: scale(0.95);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes modalFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes modalFadeInBg {
+    from{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@media all and ( max-width: 640px) {
+    .formUpdate {
+        .formContainer {
+            .formContent {
+                .formBody {
+                    .typeInput {
+                        padding: 6px 8px;
+                        font-size: 14px;
+                    }
+                    .formBtn {
+                        .btnUpdate {
+                            padding: 6px 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

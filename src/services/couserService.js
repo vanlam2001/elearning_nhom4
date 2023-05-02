@@ -19,6 +19,8 @@ export const courseService = {
     getCategoryCourse: (id) => {
         return https.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${id}&MaNhom=GP01`)
     },
-
+    postCancelCourse: (data) => {
+        return https.post('/api/QuanLyKhoaHoc/HuyGhiDanh', data)
+    },
 
 }

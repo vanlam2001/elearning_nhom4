@@ -1,0 +1,65 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+
+
+.infoUserPage {
+    margin-top: 80px;
+    .infoContent {
+        padding: 50px 0;
+        display: flex;
+        .infoLeft {
+            width: 25%;
+            .contentLeft {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                h4 {
+                    margin-top: 10px;
+                    font-size: 18px;
+                }
+                p {
+                    font-size: 14px;
+                    margin: 10px 0;
+                }
+                .btnInfo {
+                    padding: 10px;
+                    font-size: 16px;
+                    border-radius: 50px;
+                    border: none;
+                    color: #fff;
+                    background-color: $--colorGlobal;
+                    transition: all .5s;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+        .infoRingh {
+            width: 75%;
+        }
+    }
+}
+@media all and ( max-width: 1023px) {
+    .infoUserPage {
+        .infoContent {
+            .infoLeft {
+                display: none;
+            }
+            .infoRingh {
+                width: 100%;
+            }
+        }
+    }
+}

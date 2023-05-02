@@ -5,6 +5,7 @@ import HomePage from "../HomePage/HomePage";
 import Layout from "../Layout/Layout";
 import CategoryCoursePage from "../Pages/CategoryCoursePage/CategoryCoursePage";
 import DetailPage from "../Pages/DetailPage/DetailPage";
+import InfoUserPage from "../Pages/InfoUserPage/InfoUserPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
@@ -42,6 +43,11 @@ export const userRoute = [
     {
         path: '/categorycourse/:id',
         component: <Layout Component={CategoryCoursePage}></Layout>
+    },
+
+    {
+        path: '/user',
+        component: <Layout Component={InfoUserPage}></Layout>
     },
 
     {

@@ -16,7 +16,6 @@ export default function CategoryCoursePage() {
             .catch((err) => {
                 console.log(err);
             });
-
     }, [params.id])
 
     return (
