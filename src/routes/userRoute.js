@@ -9,6 +9,7 @@ import InfoUserPage from "../Pages/InfoUserPage/InfoUserPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
+import SearchPage from "../Pages/SearchPage/SearchPage";
 
 export const userRoute = [
     {
@@ -54,10 +55,13 @@ export const userRoute = [
         path: '*',
         component: <Layout Component={NotFoundPage}></Layout>
     },
-
     {
         path: '/info',
         component: <Layout Component={Info}></Layout>
+    },
+    {
+        path: '/search/:value',
+        component: <Layout Component={SearchPage}></Layout>
     },
 
 

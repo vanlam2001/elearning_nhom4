@@ -2,18 +2,22 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { courseService } from '../../services/couserService';
 import { setListCourse } from '../../Toolkits/courseSlice';
+import { setSpinnerOff, setSpinnerOn } from '../../Toolkits/spinnerSlice';
 import BackEndCourse from '../BackEndCourse/BackEndCourse';
 import FrontEndCourse from '../FrontEndCourse/FrontEndCourse';
 import PopularCourse from '../PopularCourse/PopularCourse';
 
 export default function ListCourseHome() {
-  let dispath = useDispatch();
+  let dispatch = useDispatch();
   useEffect(() => {
+    dispatch(setSpinnerOn())
     courseService.getCourseList()
       .then((res) => {
-        dispath(setListCourse(res.data))
+        dispatch(setSpinnerOff())
+        dispatch(setListCourse(res.data))
       })
       .catch((err) => {
+        dispatch(setSpinnerOff())
         console.log(err);
       });
   }, [])

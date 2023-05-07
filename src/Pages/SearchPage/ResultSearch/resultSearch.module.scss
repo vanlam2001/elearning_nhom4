@@ -1,0 +1,106 @@
+$--colorGlobal: #41b294;
+$--colorSecondary1: #f6ba35;
+$--colorText: #252525;
+@media all and ( max-width: 1023px) {
+    
+}
+
+.resultSearch {
+    h4 {
+        font-size: 16px;
+    }
+    .itemResult {
+        display: flex;
+        align-items: center;
+        margin: 30px -10px 0;
+        font-size: 16px;
+        .imageCourse {
+            width: 25%;
+            padding: 0 10px;
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .courseContent {
+            width: 50%;
+            padding: 0 10px;
+            h4 {
+                font-size: 16px;
+            }
+            .courseDes {
+                font-size: 14px;
+                margin: 5px 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .iconTime {
+                display: flex;
+                align-items: center;
+                > div {
+                    display: flex;
+                    align-items: center;
+                    padding-right: 16px;
+                    svg {
+                        margin-right: 6px;
+                    }
+                }
+                > div:nth-child(1) svg {
+                    color: #f5c002;
+                }
+                > div:nth-child(2) svg {
+                    color: #f06f68;
+                }
+                > div:nth-child(3) svg {
+                    color: #65c9ff;
+                }
+            }
+            .iconStar {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                color: $--colorSecondary1;
+                margin: 5px 0;
+            }
+            .infoMaker {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 8px;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        .btnInfo {
+            width: 25%;
+            padding: 0 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media all and ( max-width: 768px) {
+    .resultSearch {
+        .itemResult {
+            flex-direction: column;
+            .imageCourse,
+            .courseContent,
+            .btnInfo {
+                width: 100%;
+                margin-bottom: 12px;
+                max-width: 400px;
+            }
+            .btnInfo {
+            justify-content: flex-start;
+            }
+        }
+    }
+}

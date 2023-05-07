@@ -12,7 +12,6 @@ function LoginPage() {
     let fillForm = () => {
         let info = localUserServ.get();
         if (info != null) {
-            console.log(info);
             return info;
         }
 
@@ -24,7 +23,6 @@ function LoginPage() {
     const onFinish = (values) => {
         userServ.loginUser(values)
             .then((res) => {
-                console.log(res)
                 message.success("Đăng nhập thành công");
                 dispatch(setLoginUser(res.data));
                 localUserServ.set(res.data)

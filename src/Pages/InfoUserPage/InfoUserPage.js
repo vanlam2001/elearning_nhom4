@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import TitlePage from '../../Components/TitlePage/TitlePage'
 import { localUserServ } from '../../services/localService'
 import { userServ } from '../../services/userService'
+import { setSpinnerOff, setSpinnerOn } from '../../Toolkits/spinnerSlice'
 import { setInfoAccountUser } from '../../Toolkits/userSlice'
 import FormUpdateInfo from './FormUpdateInfo/FormUpdateInfo'
 import styles from './infoUserPage.module.scss'
@@ -12,11 +13,14 @@ export const fetchInfoAccount = (dispatch) => {
     let data = {
         "taiKhoan": localUserServ.get()?.taiKhoan
     }
+    dispatch(setSpinnerOn())
     userServ.getInfoAccountUser(data)
     .then((res) => {
+        dispatch(setSpinnerOff())
         dispatch(setInfoAccountUser(res.data))
     })
     .catch((err) => {
+        dispatch(setSpinnerOff())
         console.log(err);
     });
 }
@@ -27,11 +31,14 @@ export default function InfoUserPage() {
         let data = {
             "taiKhoan": localUserServ.get()?.taiKhoan
         }
+        dispatch(setSpinnerOn())
         userServ.getInfoAccountUser(data)
         .then((res) => {
+            dispatch(setSpinnerOff())
             dispatch(setInfoAccountUser(res.data))
         })
         .catch((err) => {
+            dispatch(setSpinnerOff())
             console.log(err);
         });
     // eslint-disable-next-line

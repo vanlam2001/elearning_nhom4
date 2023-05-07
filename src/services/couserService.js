@@ -22,5 +22,8 @@ export const courseService = {
     postCancelCourse: (data) => {
         return https.post('/api/QuanLyKhoaHoc/HuyGhiDanh', data)
     },
+    getListCourseSearch: (value) => {
+        return https.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${value}&MaNhom=GP01`)
+    },
 
 }

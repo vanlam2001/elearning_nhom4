@@ -7,6 +7,7 @@ import { message } from 'antd'
 import { setFormUpdateUser } from '../../../Toolkits/userSlice'
 import { userServ } from '../../../services/userService';
 import { fetchInfoAccount } from '../InfoUserPage';
+import { setSpinnerOff, setSpinnerOn } from '../../../Toolkits/spinnerSlice';
 export default function FormUpdateInfo() {
   const dispatch = useDispatch()
   const isUpdate = useSelector((state) => state.userSlice.isFormUpdate)
@@ -24,13 +25,16 @@ export default function FormUpdateInfo() {
       "maNhom": infoAccount.maNhom,
       "email": values.email,
     }
+    dispatch(setSpinnerOn())
     userServ.putInfoUpdate(data)
       .then((res) => {
+        dispatch(setSpinnerOff())
         setFormUpdateOff()
         fetchInfoAccount(dispatch)
         message.success('Cập nhật thành công!')
       })
       .catch((err) => {
+        dispatch(setSpinnerOff())
         console.log(err);
       });
   }
@@ -76,7 +80,7 @@ export default function FormUpdateInfo() {
                   message: 'Tên không được để trống!',
                 },
                 {
-                  pattern: /^[a-zA-Z\s]{3,}$/,
+                  pattern: /^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]{3,}$/,
                   message: "Tên phải là chữ và ít nhất 3 ký tự!",
                 },
               ]}

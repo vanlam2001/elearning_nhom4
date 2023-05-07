@@ -9,12 +9,10 @@ import RegisterCourse from './RegisterCourse/RegisterCourse';
 export default function DetailPage() {
     const params = useParams();
     const [course, setCourse] = useState({})
-    console.log("🚀 ~ file: DetailPage.js:10 ~ DetailPage ~ course:", course)
 
     useEffect(() => {
         courseService.getDetailCourse(params.id)
             .then((res) => {
-                console.log("🚀 ~ file: DetailPage.js:15 ~ .then ~ res:", res)
                 setCourse(res.data)
             })
             .catch((err) => {

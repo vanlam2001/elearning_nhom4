@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-
+import { Input} from 'antd';
 import {
-    FaReact,
     FaDatabase,
     FaTabletAlt,
     FaCode,
@@ -11,12 +10,8 @@ import {
     FaUserNinja,
 } from "react-icons/fa";
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
     CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -26,11 +21,10 @@ import {
 } from "@heroicons/react/20/solid";
 import HeaderUserinfo from "./HeaderUserinfo";
 import { NavLink } from "react-router-dom";
-
-import Layout from "../../Layout/Layout";
-import BackEndCourse from "../BackEndCourse/BackEndCourse";
 import { courseService } from "../../services/couserService";
-
+import { useNavigate } from "react-router-dom";
+import './header.css'
+const { Search } = Input;
 const products = [
     {
         name: "Lập trình BackEnd",
@@ -80,6 +74,7 @@ function classNames(...classes) {
 }
 
 function Header() {
+    const navigate = useNavigate()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [listCategoryCourse, setListCategoryCourse] = useState([])
     useEffect(() => {
@@ -91,15 +86,17 @@ function Header() {
                     listObj.push(newObj)
                 }
                 setListCategoryCourse(listObj);
-
             })
             .catch((err) => {
                 console.log(err);
             });
-
     }, [])
 
-
+    const onSearch = (value) => {
+        if(value) {
+            navigate(`/search/${value}`)
+        }
+    };
     return (
         <div>
             <header className="bg-white z-50 fixed navbar inset-x-0 top-0 left-0">
@@ -107,7 +104,7 @@ function Header() {
                     className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                     aria-label="Global"
                 >
-                    <div className="flex lg:flex-1">
+                    <div className="flex lg:flex-1 items-center">
                         <NavLink to={"/"} className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
@@ -116,6 +113,14 @@ function Header() {
                                 alt=""
                             />
                         </NavLink>
+                        <Search
+                        className="inputSearch ml-2"
+                        placeholder="Tìm kiếm"
+                        onSearch={onSearch}
+                        style={{
+                            maxWidth: 150,
+                        }}
+                        />
                     </div>
                     <div className="flex lg:hidden">
                         <button

@@ -22,7 +22,6 @@ function RegisterPage() {
             if (isValidation) {
                 try {
                     let response = await userServ.registerUser(values);
-                    console.log("🚀 ~ file: RegisterPage.js:18 ~ fetchRegisterUser ~ response:", response)
                     dispatch((registerSuccess()));
                     localUserServ.set(response.data)
                     message.success("Đăng ký thành công")

@@ -4,22 +4,25 @@ import { courseService } from '../../services/couserService';
 import { Pagination } from 'antd';
 import ListCourseHome from '../ListCourseHome/ListCourseHome';
 import { setListCourse } from '../../Toolkits/courseSlice';
+import { setSpinnerOff, setSpinnerOn } from '../../Toolkits/spinnerSlice';
 
 
 export default function ListKhoaHoc() {
-    let dispath = useDispatch();
+    let dispatch = useDispatch();
     const [listKhoaHoc, setListKhoaHoc] = useState([]);
     const [numPage] = useState(0)
 
     useEffect(() => {
+        dispatch(setSpinnerOn())
         courseService.getCourseList()
             .then((res) => {
-                dispath(setListCourse(res.data))
+                dispatch(setSpinnerOff())
+                dispatch(setListCourse(res.data))
                 let newListKhoaHoc = pageSplitListKhoaHoc(res.data, 1)
                 setListKhoaHoc(newListKhoaHoc);
             })
-
             .catch((err) => {
+                dispatch(setSpinnerOff())
                 console.log(err)
             })
     }, [])
