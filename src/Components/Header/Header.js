@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import { Input} from 'antd';
+import { Input } from 'antd';
 import {
     FaDatabase,
     FaTabletAlt,
@@ -93,7 +93,7 @@ function Header() {
     }, [])
 
     const onSearch = (value) => {
-        if(value) {
+        if (value) {
             navigate(`/search/${value}`)
         }
     };
@@ -113,14 +113,7 @@ function Header() {
                                 alt=""
                             />
                         </NavLink>
-                        <Search
-                        className="inputSearch ml-2"
-                        placeholder="Tìm kiếm"
-                        onSearch={onSearch}
-                        style={{
-                            maxWidth: 150,
-                        }}
-                        />
+
                     </div>
                     <div className="flex lg:hidden">
                         <button
@@ -221,7 +214,25 @@ function Header() {
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <HeaderUserinfo></HeaderUserinfo>
+
                     </div>
+
+                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        <Search
+                            className="inputSearch ml-2"
+                            placeholder="Tìm kiếm"
+                            onSearch={onSearch}
+                            style={{
+                                maxWidth: 150,
+                            }}
+                        />
+                    </div>
+
+
+
+
+
+
                 </nav>
                 <Dialog
                     as="div"
@@ -239,6 +250,8 @@ function Header() {
                                     src="https://demo2.cybersoft.edu.vn/logo.png"
                                     alt=""
                                 />
+
+
 
                             </NavLink>
                             <button
@@ -304,6 +317,16 @@ function Header() {
                                 </div>
                                 <div className="py-6">
                                     <HeaderUserinfo></HeaderUserinfo>
+                                </div>
+                                <div className="py-6">
+                                    <Search
+                                        className="inputSearch ml-2"
+                                        placeholder="Tìm kiếm"
+                                        onSearch={onSearch}
+                                        style={{
+                                            maxWidth: 150,
+                                        }}
+                                    />
                                 </div>
                             </div>
                         </div>
