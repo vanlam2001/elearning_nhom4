@@ -49,7 +49,7 @@ export const repeatPassword = (passowrd, repeatPassword) => {
 
 export const checkFullName = (fullNmae) => {
     let checkName = false;
-    const isFullNameValid = matches(fullNmae, /^[a-zA-Z]{2,}(?: [a-zA-Z]+){1,}$/);
+    const isFullNameValid = matches(fullNmae, /[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u);
 
     if (isFullNameValid) {
         checkName = true;
