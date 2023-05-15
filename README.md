@@ -1,7 +1,7 @@
 # Thông tin nhóm 4 BC41 [CAPSTONE] Elearing
 
-Link User: [https://elearning-nhom4.vercel.app](https://elearning-nhom4.vercel.app)
-Link Admin: [https://admin-elearning-nhom4.vercel.app](https://admin-elearning-nhom4.vercel.app)
+- Link User: [https://elearning-nhom4.vercel.app](https://elearning-nhom4.vercel.app)
+- Link Admin: [https://admin-elearning-nhom4.vercel.app](https://admin-elearning-nhom4.vercel.app)
 
 ## Nguyễn Văn Lắm
 
