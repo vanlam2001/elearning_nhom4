@@ -27,7 +27,7 @@ AdminUserPage: Xóa, Sửa, Thêm User, Cập nhật User, Tìm kiếm User, Ch�
 Đỗ Văn Long
 
 Danh Mục Khóa Học
-Khóa học phổ biến
+Khóa học
 Tìm kiếm khóa học
 Hồ sơ Khóa học
 Cập nhật hồ sơ học viên
