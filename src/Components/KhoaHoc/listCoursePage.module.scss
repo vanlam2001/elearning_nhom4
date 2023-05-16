@@ -1,0 +1,106 @@
+.listCoursePage {
+    padding: 0 0 50px;
+    margin-top: 80px;
+    .listBoxCourse {
+        padding: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        .itemBoxCourse {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+            color: #fff;
+            h3 {
+                font-size: 16px;
+            }
+            svg {
+                font-size: 32px;
+                margin: 10px 0;
+            }
+            p {
+                font-size: 20px;
+            }
+            &:nth-child(1) {
+                background-color: #264653;
+            }
+            &:nth-child(2) {
+                background-color: #2a9d8f;
+            }
+            &:nth-child(3) {
+                background-color: #e9c46a;
+            }
+            &:nth-child(4) {
+                background-color: #f4a261;
+            }
+            &:nth-child(5) {
+                background-color: #ee8959;
+            }
+            &:nth-child(6) {
+                background-color: #e76f51;
+            }
+        }
+    }
+    .listContainer {
+        padding: 0 0 50px;
+        > h3 {
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: 4px;
+                color: #ed85ab;
+            }
+        }
+        .listContent {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+    }
+    .btnPage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media all and ( max-width: 1280px) {
+    .listCoursePage {
+        .listContainer {
+            .listContent {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
+@media all and ( max-width: 1024px) {
+    .listCoursePage {
+        .listContainer {
+            .listContent {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+}
+@media all and ( max-width: 768px) {
+    .listCoursePage {
+        .listBoxCourse {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}
+@media all and ( max-width: 640px) {
+    .listCoursePage {
+        .listBoxCourse {
+            grid-template-columns: repeat(2,1fr);
+        }
+        .listContainer {
+            .listContent {
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    }
+}

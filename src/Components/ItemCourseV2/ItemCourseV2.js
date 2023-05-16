@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './itemCourseV2.module.scss'
 export default function ItemCourseV2({item}) {
   return (
-    <NavLink to={`/detail/${item.maKhoaHoc}`}>
+    <NavLink to={`/detail/${item.maKhoaHoc}`} style={{maxWidth: 280, width: '100%'}}>
       <div className={styles.item}>
         <div className={styles.sale}><span>Yêu thích</span></div>
         <div className={styles.imageCourse}>

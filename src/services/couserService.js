@@ -25,5 +25,8 @@ export const courseService = {
     getListCourseSearch: (value) => {
         return https.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${value}&MaNhom=GP01`)
     },
+    getListCoursePageSplit: (page) => {
+        return https.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang?page=${page}&pageSize=12&MaNhom=GP01`)
+    }
 
 }
