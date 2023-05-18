@@ -5,6 +5,7 @@ import { userServ } from '../../services/userService';
 import { Input, Button, message, Form } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { setLoginUser } from '../../Toolkits/userSlice';
+import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
     let dispatch = useDispatch();
@@ -93,7 +94,10 @@ function LoginPage() {
                             </div>
                         </div>
 
-                        <p className="mt-12 text-xs text-center font-light text-gray-400"> Chưa có tài khoản? <a href="#" className="text-black font-medium"> Đăng ký </a>  </p>
+                        <p className="mt-12 text-xs text-center font-light text-gray-400"> Chưa có tài khoản?
+                            <NavLink to={"/register"} href="#" className="text-black font-medium"> Đăng ký </NavLink>
+                        </p>
+
 
                     </div>
                 </div>
