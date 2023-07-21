@@ -97,8 +97,6 @@ function LoginPage() {
                         <p className="mt-12 text-xs text-center font-light text-gray-400"> Chưa có tài khoản?
                             <NavLink to={"/register"} href="#" className="text-black font-medium"> Đăng ký </NavLink>
                         </p>
-
-
                     </div>
                 </div>
             </div>
